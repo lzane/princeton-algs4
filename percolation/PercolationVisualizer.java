@@ -19,7 +19,7 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 
-import java.awt.*;
+import java.awt.Font;
 
 public class PercolationVisualizer {
 
@@ -41,10 +41,12 @@ public class PercolationVisualizer {
                 if (perc.isFull(row, col)) {
                     StdDraw.setPenColor(StdDraw.BOOK_LIGHT_BLUE);
                     opened++;
-                } else if (perc.isOpen(row, col)) {
+                }
+                else if (perc.isOpen(row, col)) {
                     StdDraw.setPenColor(StdDraw.WHITE);
                     opened++;
-                } else
+                }
+                else
                     StdDraw.setPenColor(StdDraw.BLACK);
                 StdDraw.filledSquare(col - 0.5, n - row + 0.5, 0.45);
             }
