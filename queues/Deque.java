@@ -23,7 +23,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     // is the deque empty?
     public boolean isEmpty() {
-        return first == null;
+        return n == 0;
     }
 
     // return the number of items on the deque
@@ -37,6 +37,7 @@ public class Deque<Item> implements Iterable<Item> {
             throw new IllegalArgumentException("item can not be null");
         }
 
+        n++;
         // empty
         if (first == null) {
             Node newNode = new Node();
@@ -63,6 +64,7 @@ public class Deque<Item> implements Iterable<Item> {
             throw new IllegalArgumentException("item can not be null");
         }
 
+        n++;
         // empty
         if (first == null) {
             Node newNode = new Node();
@@ -89,6 +91,7 @@ public class Deque<Item> implements Iterable<Item> {
             throw new NoSuchElementException("first is null");
         }
 
+        n--;
         Node removeNode = first;
         if (first.next == null) {
             // last one to remove
@@ -109,6 +112,7 @@ public class Deque<Item> implements Iterable<Item> {
             throw new NoSuchElementException("last is null");
         }
 
+        n--;
         Node removeNode = last;
         if (last.prev == null) {
             // last one to remove
